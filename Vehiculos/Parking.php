@@ -6,7 +6,7 @@ class Vehiculo
     public $modelo;
     public $color;
     public $matricula;
-    public array $planta = ["UNO", "DOS"];
+    public array $planta = ["superficie", "subterraneo1", "subterraneo2"];
 
     //Constructor
     public function __construct($marca, $modelo, $color, $matricula){
@@ -53,15 +53,30 @@ class Vehiculo
         return $this->planta;
     }
 
-    public function setPlanta($matricula){
+    public function setPlanta($planta){
         $this->planta[] = $planta;
     }
 }
 
 class Autobus extends Vehiculo
 {
-    public function puedeAparcar(){
+    public $empresa;
 
+    public function __construct($marca, $modelo, $color, $matricula, $empresa){
+        parent::__construct($marca, $modelo, $color, $matricula);
+        $this->empresa = $empresa;
+    }
+        
+    
+    public function puedeAparcar($planta){
+        $condicion = false;
+
+        if ($planta == "subterraneo1" || $planta == "subterraneo2")
+            $condicion = false;
+        elseif ($planta == "superficie")
+            $condicion = true;
+        
+        return $condicion;
     }
 }
 
