@@ -1,4 +1,7 @@
 <?php
-trait formatearPrecio($importe){
-    return number_format($importe, 2, ',', '.')
+trait FormateaPrecio{
+    public function formatearPrecio($importe){
+        return number_format($importe, 2, ',', '.');
+    }
+    
 }

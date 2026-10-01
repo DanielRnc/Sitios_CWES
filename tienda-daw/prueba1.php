@@ -1,45 +1,35 @@
-<?php
+<?php 
+require_once __DIR__ . '/src/interfaces/Enviable.php';
+require_once __DIR__ . '/src/interfaces/Descargable.php';
 
-class Producto
-{
-    protected $codigo;
-    protected $nombre;
-    protected $precioBase;
+require_once __DIR__ . '/src/traits/FormateaPrecio.php';
+require_once __DIR__ . '/src/traits/Descontable.php';
 
-    //Metodos abstractos
-    abstract public function getTipo();
-    abstract protected function getIva();
+require_once __DIR__ . '/src/modelo/Producto.php';
+require_once __DIR__ . '/src/modelo/Libro.php';
+require_once __DIR__ . '/src/modelo/Ebook.php';
+require_once __DIR__ . '/src/modelo/Camiseta.php';
+require_once __DIR__ . '/src/modelo/PackLibro.php';
 
-    //GETTERS CLASE PRODUCTO (PADRE)
-    public function getCodigo()
-    {
-        return $this->codigo;
+$libro = new Libro('LIBRO', 'libro1', 24.00, 'Laura', 0.8);
+$ebook = new Ebook('EBOOK', 'ebook1', 9.99, 'EPUB', 3.2);
+$camiseta = new Camiseta('CAMISETA', 'Camiseta1', 15.00, 'M', 0.2);
+$pack = new PackLibro('PACKLIBRO', 'packlibroº', 32.00, 1.1, 8.4);
+
+$libro->aplicarDescuento(10); 
+$ebook->aplicarDescuento(20); 
+
+$productos = [$libro, $ebook, $camiseta, $pack];
+
+foreach ($productos as $p) {
+    echo $p->getTipo() . ": " . $p->getNombre() . "<br>";
+    echo "Precio base: " . $p->formatearPrecio($p->getPrecioBase()) . " €<br>";
+    echo "Descuento: " . $p->getDescuento() . " %<br>";
+    echo "Precio final con IVA: " . $p->getPrecioFinalFormateado() . " €<br>";
+
+    if ($p instanceof Enviable) {
+        echo "Es ENVIABLE → peso: " . $p->getPesoKg() . " kg, envio: " . $p->formatearPrecio($p->calcularGastosEnvio()) . " €<br>";
     }
 
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    public function getPrecioBase()
-    {
-        return $this->precioBase;
-    }
-
-    // OTROS GETTERS
-    public function getDescuento()
-    {
-        //HACER LOS CALCULOS DEL DESCUENTO
-    }
-
-    public function getPrecioFinal()
-    {
-        //HACER LOS CALCULOS DEL PRECIO FINAL
-    }
-
-    public function getPrecioFinalFormateado()
-    {
-        //PONE QUE TENGO QUE USAR (FORMATEAPRECIO)
-    }
-    
+    echo "<br>";
 }

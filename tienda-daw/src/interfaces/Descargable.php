@@ -1,4 +1,5 @@
 <?php
 interface Descargable{
-    public function getPesoKg();
+    public function getUrlDescarga();
+    public function getTamanoMb();
 }
