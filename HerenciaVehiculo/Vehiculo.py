@@ -17,3 +17,5 @@ class Vehiculo():
 
     def estado(self):
         print("Marca: ",self.marca," Modelo: ",self.modelo, " En marcha: ", self.enmarcha, " Acelerando:", self.acelera, " Frenando: ",self.frena)
+
+    
