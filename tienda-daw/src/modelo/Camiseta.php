@@ -16,7 +16,7 @@ class Camiseta extends Producto implements Enviable
         $this->talla = $talla;
         $this->pesoKg = $pesoKg;
     }
-
+        //GETTERS
     public function getPesoKg()
     {
         return $this->pesoKg;
@@ -34,5 +34,7 @@ class Camiseta extends Producto implements Enviable
     {
         return self::IVA;
     }
+     
+    
 
 }

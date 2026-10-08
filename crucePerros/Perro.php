@@ -13,32 +13,32 @@ class Perro
         $this->color = $color;
         $this->peso = $peso;
         $this->edad = $edad;
-        $this->sexo = $sexo;
+        $this->setSexo($sexo);
     }
         //GETTERS
     public function getRaza()
     {
-        $this->raza;
+        return $this->raza;
     }
 
     public function getColor()
     {
-        $this->color;
+        return $this->color;
     }
 
     public function getPeso()
     {
-        $this->peso;
+        return $this->peso;
     }
 
     public function getEdad()
     {
-        $this->edad;
+        return $this->edad;
     }
 
     public function getSexo()
     {
-        $this->sexo;
+        return $this->sexo;
     }
         //SETTERS
     public function setRaza($raza)
@@ -63,6 +63,29 @@ class Perro
 
     public function setSexo($sexo)
     {
-        $sex = strtolower($sexo);
+        $sexoMinuscula = strtolower($sexo);
+       if($sexoMinuscula=="macho" || $sexoMinuscula=="hembra"){
+            $this->sexo = $sexoMinuscula;
+        }else{
+            $this->sexo= "error";
+            echo "el sexo solo puede ser macho o hembra! <br>";
+        }
+                  
+    }
+
+    public function cruzar(Perro $otroPerro){
+        $perroHijo = null;
+        if($this->sexo !== $otroPerro->getSexo()){
+            echo "cruce posible <br>";
+            $perroHijo = new Perro($otroPerro->getRaza(),$otroPerro->getColor(),1,0,"hembra");
+        }else{
+            echo"cruce no posible <br> ";
+        }
+
+        return $perroHijo;
+    }
+        
+    public function __toString() {
+        return "Perro de raza: " . $this->raza . ", color " . $this->color . ", peso: " . $this->peso . ", edad: " .$this->edad . " y sexo: " . $this->sexo;
     }
 }   
