@@ -129,11 +129,49 @@ class equipo
     }
 
     public function eliminarDeBd(){
+        // Clave primaria para eliminar el registro
+        $equipo_id_a_eliminar = $this->id; 
 
+        try {
+            // Establecer la conexión
+            $objetoConexion = new Conexion();
+            $pdo = $objetoConexion->connect();
+
+            // Configuracion para lanzar excepciones en caso de errores
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            // Definir la consulta de eliminación con marcador de posición
+            $sql_delete = "DELETE FROM {$objetoConexion->tabla} WHERE id = :id";
+
+            // Preparar la sentencia
+            $stmt = $pdo->prepare($sql_delete);
+
+            // Asignar el valor al marcar de posición y ejecutar la sentencia
+            $stmt->execute(['id' => $equipo_id_a_eliminar]);
+
+            // Verificar y mostrar el resultado
+            if($stmt->rowCount() > 0){
+                echo "funciono";
+            }else{
+                echo "no funciono";
+            }
+        } catch (PDOException $e) {
+            die("Error en la base de datos: " . $e->getMessage());
+        }
     }
 
 
-    public function getEquipos(){
+    public static function getEquipos(){
+        // Establecer la conexión PDO
+        $objetoConexion = new Conexion();
+        $pdo = $objetoConexion->connect();
 
-    }
+        // Configuracion para lanzar excepciones en caso de errores
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // Definir la consulta para obtener todos los equipos
+        $sql_obtener = "SELECT * FROM {$objetoConexion->tabla}";
+
+        // Preparar la setencias
+        $stmt = $pdo->prepare($sql_obtener);
 }
