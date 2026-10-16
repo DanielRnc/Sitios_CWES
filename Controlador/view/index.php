@@ -23,7 +23,13 @@
         <td><?php echo $row->marca; ?></td>
         <td><?php echo $row->modelo; ?></td>
         <td><?php echo $row->color; ?></td>
-        <td><?php echo $row->propietario; ?></td> 
+        <td><?php echo $row->propietario; ?></td>
+        
+        <td>
+            <!-- Pasamos $key o el id correspondiente -->
+            <a href="/www/Controlador/index.php/baja/<?php echo $key; ?>">Eliminar</a>
+        </td>
+        
     </tr>
     <?php endforeach; ?>
 </table>

@@ -10,7 +10,7 @@ class CocheController
             1 => new Coche("Volkswagen", "Polo", "negro", "Rebeca"),
             2 => new Coche("Toyota", "Corolla", "verde", "Marcos"),
             3 => new Coche("Skoda", "Octavia", "gris", "Mario"),
-            4 => new Coche("Kia", "Niro", "azul", "Jairo")
+            4 => new Coche("Kia", "Niro", "azul", "Jairo"),
             //BLANCO
             5 => new Coche("Skoda", "Octavia", "blanco", "Mario"),
             6 => new Coche("Kia", "Niro", "blanco", "Jairo")
@@ -29,6 +29,14 @@ class CocheController
         }
     }
 
+    public function baja($id)
+    {
+        if (array_key_exists($id, $this->coches)) {
+            unset($this->coches[$id]);
+        }
+            $this->index();
+    }
+
     public function index()
     {
         // Asigno los coches a una variable que estará esperando la vista
@@ -37,5 +45,4 @@ class CocheController
         // Le paso los datos a la vista
         require("view/index.php");
     }
-
 }

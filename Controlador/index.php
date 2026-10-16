@@ -19,7 +19,9 @@ $array_ruta = array_filter(explode("/", $ruta));
 if (isset($array_ruta[0]) && $array_ruta[0] == "ver" && is_numeric($array_ruta[1])) {
     // Llamo al método ver pasándole la clave que me están pidiendo
     $controller->ver($array_ruta[1]);
-} else {
+}elseif (isset($array_ruta[0]) && $attay_ruta[0] == "baja" && is_numeric($array_ruta[1])){
+    $controller->baja($array_ruta[1]);
+}else {
     // Llamo al método por defecto del controlador
     $controller->index();
 }
