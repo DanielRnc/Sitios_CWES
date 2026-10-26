@@ -1,0 +1,1 @@
+esta hecho hasta la parte de borrar, insertar no funciona, si quieres borrar usa /baja/id, si quieres ve por color usa /color/$color ejemplo: /color/blanco, si no pones nada extra saca la bdd, recuerda cambiar el home en el index.php de ser neccesario (nombes de carpetas)
