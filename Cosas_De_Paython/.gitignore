@@ -1,0 +1,3 @@
+entorno_de_pruebas/
+__pycache__/
+db.sqlite3
