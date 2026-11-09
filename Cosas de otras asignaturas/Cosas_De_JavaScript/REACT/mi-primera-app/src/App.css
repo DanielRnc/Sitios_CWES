@@ -1,0 +1,58 @@
+/* Importa la fuente Roboto desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Contenedor principal que ocupa toda la pantalla y centra el contenido */
+.content-app{
+  display: flex;
+  align-items: center; /*Centrado vertical*/
+  justify-content: center; /*Centrado horizontal*/
+  height: 100vh;/*Ocupa el 100% de la altura del viewport */
+  background-color: white; /*Fondo de la página blanco */
+  flex-direction: column;
+  flex-direction: column;
+}
+
+/* Estilos para el input de texto */
+.centered-input{
+  border-radius: 8px; /* Esquinas redondeadas */
+  padding: 10px 15px; /* Relleno interno */
+  width: 250px; /* Ancho fijo del input */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*Sombra suave*/
+  text-align: center; /* Texto centrado dentro del input */
+  font-size: 16px; /* Tamaño de fuente */
+  outline: none; /* Quita el contorno por defecto al enfocar */
+}
+
+.logotipo {
+  font-family: 'Roboto', sans-serif; /* Usa la fuente Roboto */
+  font-size: 78px; /* Tamaño grande para que se parezca al logo */
+  font-weight: 700; /* Negrita */
+  letter-spacing: -1px; /* Espaciado de letras ligeramente más ajustado */
+  margin-bottom: 30px; /* Separación vertical entre la palabra y el input */
+}
+/* Colores individuales para cada letra */
+.letra1 { color: #4285F4; /* Azul */ }
+.letra2 { color: #EA4335; /* Rojo */ }
+.letra3 { color: #F9BC05; /* Amarillo */ }
+.letra4 { color: #4285F4; /* Azul */ }
+.letra5 { color: #34A853; /* Verde */ }
+.letra6 { color: #EA4335; /* Rojo */ }
+
+.main-header {
+position: absolute; /* Lo saca del centrado del contenedor */
+top: 0; /* Pegado arriba */
+left: 0;
+right: 0; /* Ocupa todo el ancho, de borde a borde */
+display: flex;
+justify-content: space-between; /* Empuja los enlaces de la izquierda y derecha a los extremos */
+align-items: center; /* Centra los elementos verticalmente en el encabezado */
+padding: 15px 20px; /* Relleno superior/inferior y lateral */
+font-size: 14px;
+color: #5f6368; /* Color de texto para los enlaces */
+}
+
+.header-links-left,
+.header-links-right {
+display: flex;
+gap: 15px; /* Espacio entre los enlaces */
+}
