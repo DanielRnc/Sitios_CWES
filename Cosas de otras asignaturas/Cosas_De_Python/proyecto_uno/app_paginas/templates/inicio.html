@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mi página web</title>
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
+</head>
+
+<body>
+    <header>
+        <h1>Bienvenidos a mi página web</h1>
+
+        <nav>
+            <ul>
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'pagina1' %}">Página 1</a></li>
+                <li><a href="{% url 'pagina2' %}">Página 2</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Contenido principal</h2>
+        <p>Este es el contenido principal de mi página web.</p>
+    </main>
+</body>
+
+</html>

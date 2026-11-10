@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mi página web</title>
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
+</head>
+Desarrollo de aplicaciones web en Python 23
+
+<body>
+    <header>
+        <h1>Página 1</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Contenido principal</h2>
+        <p>Esta es la página 1.</p>
+    </main>
+</body>
+
+</html>
