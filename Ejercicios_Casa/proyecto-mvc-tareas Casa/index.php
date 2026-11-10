@@ -21,15 +21,18 @@
             echo 'formulario de login';
             break;
         
+        case 'procesarLogin':
+            echo 'procesar el login';
+            break;
         case 'register':
             echo 'formulario de registro';
             break;
         
-        case 'procesarRegistro';
+        case 'procesarRegistro':
             echo 'procesar registro';
             break;
         
-        case 'logout';
+        case 'logout':
             echo 'cerrar sesion';
             break;
         
@@ -37,6 +40,10 @@
 
         case 'misTareas':
             echo 'mis tareas';
+            break;
+        
+        case 'crearTarea':
+            echo 'crear la tarea';
             break;
 
         case 'guardarTarea':
@@ -59,4 +66,11 @@
             echo 'pagina no encontrada';
             break;
     }
+    /* PROBANDO EL METODO OBTENER TODAS DE LA CLASE TAREA.PHP
+    require_once('app/models/Tarea.php');
+    $tarea = new Tarea((new Database())->getConnection());
+    var_dump($tarea->obtenerTodas());
+    exit;
+    /*
+    
 ?>
