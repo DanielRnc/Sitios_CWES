@@ -1,0 +1,52 @@
+html, body, #root, .App {
+  height: 100%; /* Asegura que el contenedor principal ocupe toda la altura de la ventana */
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column; /* Apila los elementos verticalmente */
+}
+
+.componente-superior {
+  flex: 8; /* Ocupa 8 partes del espacio disponible */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible de su padre */
+  background-color: lightblue; /* Solo para visualización */
+  display: flex; /* Para centrar contenido si es necesario */
+  justify-content: center;
+  align-items: center;
+}
+
+.componente-inferior {
+  flex: 2; /* Ocupa 2 partes del espacio disponible */
+  background-color: lightgreen; /* Solo para visualización */
+  display: flex; /* Para centrar contenido si es necesario */
+  justify-content: center;
+  align-items: center;
+}
+
+.zona-izquierda {
+  flex: 6; /* Ocupa 6 partes del espacio disponible (60%) */
+  background-color: #351ad1; /* Un color diferente para visualizar */
+  display: flex;
+  flex-direction: column; /* Alinea el contenido interno verticalmente */
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Un poco de padding */
+  box-sizing: border-box; /* Incluye padding y border en el ancho/alto */
+  height: 100%;
+}
+
+.zona-derecha {
+  flex: 4; /* Ocupa 4 partes del espacio disponible (40%) */
+  background-color: #ece02f; /* Otro color para visualizar */
+  display: flex;
+  flex-direction: column; /* Alinea el contenido interno verticalmente */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 100%;
+}
