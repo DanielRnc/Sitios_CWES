@@ -21,9 +21,16 @@ switch ($action) {
         $controller = new AuthController($db);
         $controller->registro();
         break;
-    
+    case 'login':
+        $controller = new AuthController($db);
+        $controller->login();
+        break;
     default:
         echo 'Página no encontrada';
+        break;
+    case 'logout':
+        $controller = new AuthController($db);
+        $controller->logout();
         break;
 }
 ?>

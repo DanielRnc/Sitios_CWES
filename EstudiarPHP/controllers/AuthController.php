@@ -46,5 +46,43 @@ class AuthController
         // Se muestra la vista, con los errores si los hay
         require 'views/auth/registro.php';
     }
+
+    /**
+     * Login: muestra el formulario y, si llega por POST, comprueba los datos
+     */
+    public function login()
+    {
+        $errores =[];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->usuario->email = trim($_POST['email']);
+            $this->usuario->password = $_POST['password'];
+
+            // El modelo comprueba la contraseña con password_verify
+            if ($this->usuario->login()) {
+                // Datos del usuario guardados en la sesión
+                $_SESSION['usuario_id'] = $this->usuario->id;
+                $_SESSION['usuario_nombre'] = $this->usuario->nombre;
+                header('Location: index.php?action=listar');
+                exit;
+            }
+            $errores[] = 'Email o contraseña incorrectos';
+        }
+        
+        require 'views/auth/login.php';
+    }
+     /**
+     * Logout: destruye la sesión y vuelve al login
+     */
+    public function logout()
+    {
+        //Vacía las variables de sesión
+        $_SESSION = [];
+        // Destruye la sesión
+        session_destroy();
+
+        header('Location: index.php?action=login');
+        exit;
+    }
 }
 ?>
