@@ -9,6 +9,8 @@ require_once 'config/config.php';
 require_once 'config/Database.php';
 require_once 'models/Usuario.php';
 require_once 'controllers/AuthController.php';
+require_once 'models/Libro.php';
+require_once 'controllers/LibroController.php';
 
 // Conexión a la base de datos
 $db = (new Database())->getConnection();
@@ -31,6 +33,26 @@ switch ($action) {
     case 'logout':
         $controller = new AuthController($db);
         $controller->logout();
+        break;
+    
+    case 'listar':
+        $controller = new LibroController($db);
+        $controller->listar();
+        break;
+    
+    case 'crear':
+        $controller = new LibroController($db);
+        $controller->crear();
+        break;
+    
+    case 'editar':
+        $controller = new LibroController($db);
+        $controller->editar();
+        break;
+    
+    case 'eliminar':
+        $controller = new LibroController($db);
+        $controller->eliminar();
         break;
 }
 ?>

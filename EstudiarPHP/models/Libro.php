@@ -71,18 +71,7 @@ class Libro
         $stmt->execute();
         $fila = $stmt->fetch();
 
-        if ($fila) {
-            $this->id = $fila['id'];
-            $this->titulo = $fila['titulo'];
-            $this->autor = $fila['autor'];
-            $this->genero = $fila['genero'];
-            $this->anio_publicacion = $fila['año_publicacion'];
-            $this->leido = $fila['leido'];
-            $this->usuario_id = $fila['usuario_id'];
-            $this->fecha_creacion = $fila['fecha_creacion'];
-            return true;
-        }
-        return false;
+       return $fila;
     }
 
     /**
