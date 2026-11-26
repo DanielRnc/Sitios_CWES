@@ -1,0 +1,37 @@
+@use "variables" as *;
+@use "funciones" as f;
+
+@mixin tema($modo) {
+    $color-fondo: $claro;
+    @if $modo == oscuro {
+        $color-fondo: $oscuro;
+    }
+    background: $color-fondo;
+    color: f.contraste($color-fondo);
+}
+
+@mixin contraste($f, $t){
+    background-color: $f;
+    color: $t;
+
+    &:hover{
+        background-color: $t;
+        color: $f;
+        border-color: $f;
+    }
+}
+
+@mixin flexible($direccion,$justificacion,$alineacion,$separacion){
+    display: flex;
+    flex-direction: $direccion;
+    justify-content: $justificacion;
+    align-items: $alineacion;
+    gap: $separacion;   
+}
+
+@mixin espaciado-seccion($vertical:76px){
+    padding-block: $vertical;
+}
+
+
+

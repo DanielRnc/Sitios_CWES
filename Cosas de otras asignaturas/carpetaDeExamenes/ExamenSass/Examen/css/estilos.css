@@ -1,0 +1,299 @@
+.boton {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tarjeta, .plan {
+  background: #ffffff;
+  border: 1px solid #dbe3ed;
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.etiqueta {
+  font-size: 0.75rem;
+  background-color: #e7f7f4;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 800;
+}
+
+.etiqueta--ia {
+  color: #137b72;
+}
+
+.etiqueta--web {
+  color: #225cb0;
+}
+
+.etiqueta--datos {
+  color: #a45625;
+}
+
+.etiqueta--ciber {
+  color: #853b9d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #203044;
+  background: #f4f7fb;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.contenedor {
+  width: 92%;
+  max-width: 1120px;
+  margin: auto;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #16b8a6;
+}
+
+.cabecera {
+  background: #ffffff;
+  border-bottom: 1px solid #dbe3ed;
+}
+
+.cabecera__interior {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  min-height: 82px;
+}
+
+.marca {
+  font-size: 1.4375rem;
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: -1px;
+}
+
+.marca span {
+  color: #16b8a6;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: #16b8a6;
+}
+
+.boton--primario {
+  background-color: #203044;
+  color: #ffffff;
+}
+.boton--primario:hover {
+  background-color: #ffffff;
+  color: #203044;
+  border-color: #203044;
+}
+
+.boton--claro {
+  background-color: #b9f3e7;
+  color: #203044;
+}
+.boton--claro:hover {
+  background-color: #203044;
+  color: #b9f3e7;
+  border-color: #b9f3e7;
+}
+
+.tema-oscuro {
+  background: #203044;
+  color: #ffffff;
+}
+
+.tema-claro {
+  background: #e7f7f4;
+  color: #203044;
+}
+
+.hero {
+  padding-block: 72px;
+}
+
+.hero__interior {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  line-height: 1.08;
+  margin: 14px 0 24px;
+}
+
+.hero h1 em {
+  color: #b9f3e7;
+  font-style: normal;
+}
+
+.hero__descripcion {
+  max-width: 480px;
+  color: #dbe3ed;
+  margin-bottom: 30px;
+}
+
+.hero__grafico {
+  min-height: 330px;
+  border-radius: 24px;
+  background: #126a83;
+  display: grid;
+  place-items: center;
+}
+
+.hero__grafico span {
+  font-size: 3.375rem;
+  font-weight: 900;
+}
+
+.programa {
+  padding-block: 76px;
+}
+
+.seccion-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.seccion-cabecera h2 {
+  font-size: 2.5rem;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.seccion-cabecera > p {
+  max-width: 310px;
+  color: #65758b;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.tarjeta > .tarjeta__hora {
+  color: #65758b;
+  font-size: 0.8125rem;
+}
+
+.tarjeta h3 {
+  font-size: 1.4375rem;
+  line-height: 1.2;
+  margin: 12px 0;
+}
+
+.tarjeta > p {
+  color: #65758b;
+}
+
+.tarjeta a {
+  color: #126a83;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tarjeta a:hover {
+  text-decoration: underline;
+}
+
+.destacado {
+  padding-block: 64px;
+}
+
+.destacado__interior {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.destacado h2 {
+  font-size: 2.625rem;
+  line-height: 1.15;
+  margin: 8px 0;
+}
+
+.destacado p:last-child {
+  max-width: 580px;
+}
+
+.entradas {
+  padding-block: 76px;
+}
+
+.planes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.plan {
+  padding: 32px;
+}
+
+.plan--especial {
+  background: #203044;
+  color: #ffffff;
+}
+
+.pie {
+  background: #203044;
+  color: #ffffff;
+  padding: 28px 0;
+}
+
+.pie__interior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.pie a {
+  text-decoration: none;
+}
+
+.pie a:hover {
+  color: #b9f3e7;
+}
+
+/*# sourceMappingURL=estilos.css.map */

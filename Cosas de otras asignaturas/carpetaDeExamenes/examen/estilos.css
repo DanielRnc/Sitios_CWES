@@ -1,0 +1,237 @@
+/* 1. Estilos básicos proporcionados */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: darkslategray;
+    background-color: whitesmoke;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+/* 2. COMPLETAR: cabecera y navegación */
+.cabecera{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: navy;
+    color: white;
+    padding: 20px;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.menu a{
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    color: lightblue;
+}
+
+.cabecera h1 {
+    margin: 0;
+    font-size: 1.7rem;
+}
+
+.presentacion {
+    padding: 35px;
+    background-color: lightblue;
+    border-radius: 12px;
+    margin-bottom: 35px;
+}
+
+.presentacion h2 {
+    font-size: 2rem;
+    line-height: 1.25;
+    margin: 10px 0;
+}
+
+.etiqueta {
+    font-size: .85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: steelblue;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 11px 18px;
+    background-color: steelblue;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.boton:hover { background-color: navy; }
+
+/* 3. COMPLETAR: tarjetas */
+
+#servicios{
+    width: 1000px;
+    justify-content: center;
+}
+
+#servicios >h2{
+    margin-bottom: 18px;
+}
+
+.tarjetas{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:20px;
+}
+
+.tarjeta {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.tarjeta h3{
+    margin: 0 auto;
+    color: navy;
+}
+
+.tarjeta.destacada{
+    background-color: lightyellow;
+    border: 2px solid gold;
+}
+
+
+
+.tarjeta:hover{
+    box-shadow: 0 3px 12px lightgray;
+}
+
+.tarjeta a{
+    color: steelblue;
+    text-decoration: none;
+}
+.tarjeta.destacada h3::before{
+    content: "+ ";
+    color: gold;
+}
+
+.tarjeta:nth-child(odd){ 
+   border-bottom: 4px solid lightblue;
+   
+}
+/* 4. COMPLETAR: formulario */
+
+.contacto {
+    margin-top: 35px;
+    padding: 24px;
+    background-color: white;
+    border-left: 5px solid steelblue;
+    border-radius: 8px;
+}
+.contacto a{
+    color: steelblue;
+}
+.contacto h2 { 
+    margin-top: 0;
+}
+
+input[type="text"]{
+    background-color: ivory;
+}
+input[type="email"]{
+    background-color: aliceblue;
+}
+.formulario input[required]{
+    border-left: 4px solid gold;
+}
+input:focus{
+    outline: 2px solid steelblue;
+    background-color: white;
+}
+.formulario {
+    margin-top: 20px;
+    display: grid;
+    gap: 8px;
+}
+
+.formulario label { font-weight: bold; }
+
+.formulario input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.formulario button {
+    justify-self: start;
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 5px;
+    background-color: steelblue;
+    color: white;
+    cursor: pointer;
+}
+
+.formulario button:hover { background-color: navy; }
+
+.pie {
+    padding: 18px;
+    text-align: center;
+    background-color: navy;
+    color: white;
+}
+
+.pie p { margin: 0; }
+
+
+/* 5. COMPLETAR: media queries */
+@media (min-width: 700px) and (max-width:999px){
+    .cabecera{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu{
+        display: flex;
+        gap:8px;
+        flex-direction: column;
+    }
+
+    .menu a{
+        display: block;
+        padding: 9px;
+        background-color: steelblue;
+        border-radius: 5px;
+    }
+
+    .contenedor{
+        width: 94%;
+        margin: 18px auto;
+    }
+
+    .presentacion{
+        padding: 20px;
+    }
+
+    .presentacion h2{
+        font-size: 1.5rem;
+    }
+
+    .tarjetas{
+        grid-template-columns: 1fr;
+    }
+}

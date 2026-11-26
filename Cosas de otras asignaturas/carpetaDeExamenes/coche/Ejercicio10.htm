@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0; }
+    </style>
+</head>
+<body>
+    
+    <script>
+        let rojo = parseInt(Math.random()*256);
+        let verde = parseInt(Math.random()*256);
+        let azul = parseInt(Math.random()*256);
+
+        document.write(`<div style="background-color: rgb(${rojo}, ${verde}, ${azul}); width: 100vw; height: 100vh; color: white; font-size: 30px;">`);
+        
+        let n = 5;
+    
+        for(let i=0; i<n; i++){
+            document.write("* ");
+        }
+        document.write("<br>");
+
+      
+        document.write(`</div>`);
+    </script>
+</body>
+</html>

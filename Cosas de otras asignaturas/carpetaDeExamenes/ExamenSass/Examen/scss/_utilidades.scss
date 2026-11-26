@@ -1,0 +1,33 @@
+@use "variables" as v;
+@use "funciones" as f;
+
+%boton-base{
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+%tarjeta-base{
+  background: v.$blanco;
+  border: 1px solid v.$borde;
+  border-radius: v.$radio;
+  padding: 28px;
+}
+
+%etiqueta-base{
+  font-size: f.rem(12px);
+  background-color: v.$claro;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 800;
+}
+
+@each $categoria, $color in v.$categorias{
+  .etiqueta--#{$categoria}{
+    color: $color;
+  }
+}

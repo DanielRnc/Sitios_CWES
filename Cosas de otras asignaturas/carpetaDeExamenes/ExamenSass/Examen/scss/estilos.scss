@@ -1,0 +1,209 @@
+@use "funciones" as f;
+@use "mixins" as m;
+@use "variables" as v;
+@use "utilidades";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: v.$oscuro;
+  background: v.$fondo;
+  line-height: 1.6;
+}
+a {
+  color: inherit;
+}
+.contenedor {
+  width: 92%;
+  max-width: 1120px;
+  margin: auto;
+}
+.eyebrow {
+  font-size: f.rem(12px);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: v.$turquesa;
+}
+.cabecera {
+  background: v.$blanco;
+  border-bottom: 1px solid v.$borde;
+}
+.cabecera__interior {
+  @include m.flexible(row, space-between, center, 24px);
+  min-height: 82px;
+}
+.marca {
+  font-size: f.rem(23px);
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: -1px;
+}
+.marca span {
+  color: v.$turquesa;
+}
+.menu {
+  display: flex;
+  gap: 30px;
+}
+.menu a {
+  font-size: f.rem(14px);
+  font-weight: 700;
+  text-decoration: none;
+}
+.menu a:hover {
+  color: v.$turquesa;
+}
+.boton {
+  @extend %boton-base;
+}
+.boton--primario {
+  @include m.contraste(v.$oscuro, v.$blanco);
+}
+.boton--claro {
+  @include m.contraste(v.$menta, v.$oscuro);
+}
+.tema-oscuro {
+  @include m.tema(oscuro);
+}
+.tema-claro {
+  @include m.tema(claro);
+}
+.hero {
+  @include m.espaciado-seccion(72px);
+}
+.hero__interior {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: f.rem(64px);
+  line-height: 1.08;
+  margin: 14px 0 24px;
+}
+.hero h1 em {
+  color: v.$menta;
+  font-style: normal;
+}
+.hero__descripcion {
+  max-width: 480px;
+  color: v.$borde;
+  margin-bottom: 30px;
+}
+.hero__grafico {
+  min-height: 330px;
+  border-radius: 24px;
+  background: v.$enlace;
+  display: grid;
+  place-items: center;
+}
+.hero__grafico span {
+  font-size: f.rem(54px);
+  font-weight: 900;
+}
+
+.programa {
+  @include m.espaciado-seccion(76px);
+}
+.seccion-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: f.espaciado(3);
+  margin-bottom: 32px;
+}
+.seccion-cabecera h2 {
+  font-size: f.rem(40px);
+  line-height: 1.15;
+  margin: 0;
+}
+.seccion-cabecera > p {
+  max-width: 310px;
+  color: v.$muted;
+}
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: f.espaciado(2);
+}
+.tarjeta {
+  @extend %tarjeta-base;
+}
+.tarjeta > .tarjeta__hora {
+  color: #65758b;
+  font-size: f.rem(13px);
+}
+.tarjeta h3 {
+  font-size: f.rem(23px);
+  line-height: 1.2;
+  margin: 12px 0;
+}
+.tarjeta > p {
+  color: #65758b;
+}
+.tarjeta a {
+  color: #126a83;
+  font-weight: 800;
+  text-decoration: none;
+}
+.tarjeta a:hover {
+  text-decoration: underline;
+}
+.etiqueta {
+  @extend %etiqueta-base;
+}
+.destacado {
+  @include m.espaciado-seccion(64px);
+}
+.destacado__interior {
+  @include m.flexible(row, space-between, center, 30px);
+}
+.destacado h2 {
+  font-size: f.rem(42px);
+  line-height: 1.15;
+  margin: 8px 0;
+}
+.destacado p:last-child {
+  max-width: 580px;
+}
+.entradas {
+  @include m.espaciado-seccion(76px);
+}
+.planes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: f.espaciado(3);
+}
+.plan {
+  @extend %tarjeta-base;
+  padding: 32px;
+}
+.plan--especial {
+  background: v.$oscuro;
+  color: v.$blanco;
+}
+
+.pie {
+  background: v.$oscuro;
+  color: v.$blanco;
+  padding: 28px 0;
+}
+.pie__interior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.pie a {
+  text-decoration: none;
+}
+.pie a:hover {
+  color: v.$menta;
+}
+
