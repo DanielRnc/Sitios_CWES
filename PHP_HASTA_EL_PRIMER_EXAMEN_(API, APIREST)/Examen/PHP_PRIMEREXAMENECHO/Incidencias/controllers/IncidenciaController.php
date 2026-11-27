@@ -38,26 +38,28 @@ class IncidenciaController
      */
     public function crear()
     {
-        $errores = [];
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->incidencia->titulo = trim($_POST['titulo']);
-            $this->incidencia->aula = trim($_POST['aula']);
-            $this->incidencia->prioridad = $_POST['prioridad'];
-            $this->incidencia->estado = 'Abierta';   // siempre empieza abierta
-            $this->incidencia->descripcion = trim($_POST['descripcion']);
-            $this->incidencia->usuario_id = $_SESSION['usuario_id'];
-
-            $errores = $this->incidencia->validar();
-
-            if (empty($errores)) {
-                $this->incidencia->crear();
-                header('Location: index.php?operacion=listar');
-                exit;
-            }
+        $data = json_decode(file_get_contents("php://input"));
+        if (empty($data)) {
+            $this->respuesta(400, ['success' => false, 'message' => 'No se recibieron datos o el JSON no es válido']);
         }
 
-        require 'views/incidencias/crear.php';
+        $this->incidencia->titulo = $data->titulo ?? '';
+        $this->incidencia->aula = $data->aula ?? '';
+        $this->incidencia->prioridad = $data->prioridad ?? 'Media';
+        $this->incidencia->estado = $data->estado ?? 'Abierta';
+        $this->incidencia->descripcion = $data->descripcion ?? '';
+        $this->incidencia->usuario_id = $data->usuario_id ?? '';
+
+        $errores = $this->incidencia->validar();
+        if (!$this->usuario->existeId($this->incidencia->usuario_id)) {
+            $errores[] = 'El usuario_id no existe';
+        }
+        if (!empty($errores)) {
+            $this->respuesta(400, ['success' => false, 'message' => 'Error de validación', 'errores' => $errores]);
+        }
+
+        $this->incidencia->crear();
+        $this->respuesta(201, ['success' => true, 'message' => 'Incidencia creada correctamente']);
     }
 
     /**

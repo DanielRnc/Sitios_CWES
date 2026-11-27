@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const dias = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+
+        let dia = parseInt(prompt("Introduce el día:"));
+        let mes = parseInt(prompt("Introduce el mes:"));
+        let anio = parseInt(prompt("Introduce el año:"));
+
+        // En JavaScript los meses empiezan en 0
+        let fecha = new Date(anio, mes - 1, dia);
+
+        console.log("El " + dia + "/" + mes + "/" + anio + " es " + dias[fecha.getDay()]);
+
+        console.log("Los 5 días siguientes del año que viene:");
+
+        for (let i = 1; i <= 5; i++) {
+            let siguiente = new Date(anio + 1, mes - 1, dia + i);
+            console.log(siguiente.getDate() + "/" + (siguiente.getMonth() + 1) + "/" + siguiente.getFullYear() + " es " + dias[siguiente.getDay()]);
+        }
+    </script>
+</body>
+</html>
